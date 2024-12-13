@@ -1,36 +1,50 @@
-#include <iostream>     //input-output stream for cout and cin operations to access keyboard or moniter
-/*
-iostrream is a library including cout and cin and endl, etc
-*importing any module/library is used by the #include command
-*library name between <___>
-*/
-using namespace std; //makes life easier!!
+#include <iostream>
+#include <string>
+using namespace std;
 
-/*int main() {    //funct where program/command coding starts 
-	/*
-	int i; //instantiate integer variable i !!! container of data (:
-	// cout << i << endl; would raise an error due to i being instantiated but not initialized
-	// all variables start with a letter, no special characters
-	float j = 9.9999 ; //instantiate float variable j AND initialized it (assigned it a value)
-	i = 10;
-	cout <<sqrt(j); //floats can change in deciaml length/sig figs
-	int a = j; //truncates float value
-	
-	string k; // variable object of type string
-	cout << k <<endl; // doesnt raise compiler error because instantiated string type has default initialized value of NULL.
-			   //this is because string isn't a primitive data type 
-	double h; //double is a primitive data type, instantiated in this line but not initialized
-	cout << "Hello World\n"; //print cout << is output
-	cin >> i; //cuts off at any whitespace, but takes in next when enter pressed
-	cout << i << endl; //returns 0 when i takes in a string
-	//to input full lines of text, ppl prompt user  with  getline(cin, name); name is the variable name to assign the string line to 
-	//to use getline(cin, name) function, need to #include <string>
-	
+// functions!!!!!!!!!
 
-	string firstName;
-	cout << "Type your first name: ";
-	cin >> firstName;
-	cout << "Your first name is: "<< firstName;
+//returning function returns obect of type [type], that the functions is DECLARED as
+string toLowerCase(string userString) {
+	string lower = "";
+	for (char c : userString) {
+		if (c >= 'A' && c <= 'Z') { //uper case characters
+			c = c + 32;//to lowercase
+		}
+		lower += c;
+	}
+	return lower;
+}
 
-	return 0; //where return 0 to stream, program ends
-}*/
+//void!
+void say(string argument) { //function declaration and definition, with argument of type string called "argument"
+	cout << argument << endl;
+}
+
+//delcaration fo a function, but no definition example
+char findLast(string}
+
+int main() {
+	string userString;
+	cout << "Enter a String: ";
+	getline(cin, userString);
+	//call a return object function
+	//in this cas,e our function is declared and defined as type string, meaning that it will return an object of type string
+	//the string LITERAL is of type string, is a string object, and contains all of the properties that a string contains
+	cout << "\"" << userString << "\" in all lowercase is: " << toLowerCase(userString) << endl;
+	//call a void function
+	say("Hi!");
+	cout << findLast(userString);
+	return 0;
+}
+
+//define the function after main. can be referenced before in file as long as declared earlier
+char findLast(string myString) {
+	if (myString.length() > 0) {
+		return myString.at(myString.length() - 1);
+	}
+	else {
+		return ' ';
+	}
+}
+
